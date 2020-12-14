@@ -11,13 +11,21 @@
  */
 
 module.exports = function sumArrayAllNumbers(arr) {
-    console.log(arr)
+    //console.log(arr)
     if(arr[0] > arr[1]) {
         let store = arr[0];
         arr[0] = arr[1];
         arr[1] = store;
         };
-        console.log(arr)   
-
- return 10;   
+       
+    const range = (start, stop, step) => Array.from({ length: (stop) / step + 1}, 
+    (_, i) => start + (i * step));    
+   
+    let baseArray = [];
+    let returnSum = [];
+    baseArray = range(arr[0], (arr[1] - arr[0]), 1)    
+    console.log(baseArray);
+    returnSum = baseArray.reduce((a, b) => a + b, 0); 
+    console.log(returnSum);   
+    return returnSum;   
 }
