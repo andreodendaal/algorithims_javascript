@@ -1,0 +1,18 @@
+function diffArray(arr1, arr2) {
+  var newArr = [];
+  var arr2diff = [];
+  var arr1diff = [];
+ 
+  arr2diff = arr2.filter(x => !arr1.includes(x));
+  arr1diff = arr1.filter(x => !arr2.includes(x));
+  
+  console.log(arr2diff);
+  console.log(arr1diff);
+  newArr = arr2diff.concat(arr1diff);
+  console.log(newArr);
+  return newArr;
+}
+
+//diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
+//diffArray(["diorite", "andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"])
+diffArray(["andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"])

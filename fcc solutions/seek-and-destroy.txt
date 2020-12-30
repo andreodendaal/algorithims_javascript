@@ -1,0 +1,26 @@
+function destroyer(arr) {
+  //let targetArr = [];
+ //var targetArr = [];
+ //console.log(arguments)
+ let args = Array.from(arguments);
+ console.log(args)
+ let targetArr = arguments[0]
+ //console.log(target)
+ args.shift();
+ console.log(args[0]);
+ 
+ //targetArr = targetArr.filter(elem => elem !== args[1])
+ 
+ for (let idx in args) {        
+   targetArr = targetArr.filter(elem => elem !== args[idx]);
+   };
+     
+//  targetArr.filter(function () {
+//        return true    
+//   });
+  console.log(targetArr);
+  return targetArr;
+
+}
+
+destroyer([1, 2, 3, 1, 2, 3], 2, 3);

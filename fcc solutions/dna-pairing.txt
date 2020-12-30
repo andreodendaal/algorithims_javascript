@@ -1,0 +1,28 @@
+function pairElement(str) {
+  let dna = {
+    A: "T",
+    T: "A",
+    G: "C",
+    C: "G",
+  }
+  let arr = str.split('');
+  let retArr = [];
+  //console.log(arr);
+  arr.forEach(addElements);
+
+  function addElements(value, index, array) {
+    let pair = [];
+    //console.log(value)
+    pair.push(value.toString());
+    pair.push((dna[value]).toString());
+    //console.log(dna[value]);
+    //console.log(pair);
+    retArr.push(pair);
+  }
+
+  console.log(retArr);
+  return retArr
+
+}
+
+pairElement("ATCGA");

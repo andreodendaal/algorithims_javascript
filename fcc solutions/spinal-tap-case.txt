@@ -1,0 +1,28 @@
+function spinalCase(str) {
+  //let arr = str.split(" ");
+  let arr = str.split(new RegExp('[_:? ]', 'g'));
+  console.log(arr);
+  let splitArr = [];
+  for (let elem of arr) {
+    //console.log(elem);
+    var wordArr = elem.split(/(?=[A-Z])/);    
+    if (wordArr.length > 1 ){
+        console.log(wordArr);
+        splitArr = splitArr.concat(wordArr)       
+    }
+    else {
+      splitArr.push(elem);
+    }
+  }
+  console.log("SplitArr: " + splitArr);
+  let str1 = splitArr.join('-').toLowerCase();
+  console.log(str1);
+  return str1;
+}
+
+spinalCase('this is Spinal Tap');
+spinalCase("The_Andy_Griffith_Show")
+//spinalCase("thisIsSpinalTap this is Spinal Tap")
+//spinalCase("this is Spinal Tap thisIsSpinalTap")
+//spinalCase("thisIsSpinalTap thisIsSpinalTap")
+//spinalCase("thisIsSpinalTap")

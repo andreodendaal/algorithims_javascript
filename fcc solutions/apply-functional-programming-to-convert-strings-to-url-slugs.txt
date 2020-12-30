@@ -1,0 +1,14 @@
+// Only change code below this line
+function urlSlug(title) {
+let arrTitle = title.split(" ")
+console.log(arrTitle)
+
+let arrTitleFilt = arrTitle.filter(el => el != '');
+console.log(arrTitleFilt);
+let urlTitle = arrTitleFilt.join("-").toLowerCase();
+console.log(urlTitle);
+return urlTitle;
+}
+
+//urlSlug(" Winter Is Coming");
+// Only change code above this line

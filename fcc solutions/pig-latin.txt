@@ -1,0 +1,23 @@
+function translatePigLatin(str) {
+  let retStr = ""
+  let vowelRegex = /[aeiou]/ig
+  if (str[0].match(vowelRegex)) {
+    retStr = str + "way";
+    //console.log(retStr);
+    
+  } 
+  else {
+    let cut = str.search(vowelRegex);
+    console.log(cut);
+    if (cut < 0){
+      retStr = str + "ay";
+      console.log(retStr);
+    } else {
+      retStr = str.substr(cut) + str.substr(0, cut) + "ay";
+      console.log(retStr);
+    }
+  }
+ return retStr; 
+}
+
+translatePigLatin("rhythm");

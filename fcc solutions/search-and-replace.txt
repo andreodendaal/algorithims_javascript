@@ -1,0 +1,29 @@
+function myReplace(str, before, after) {
+  let strArr = str.split(" ");
+  //console.log(strArr); 
+ 
+  let idx = strArr.findIndex(index => index.toLowerCase() === before.toLowerCase());
+  //does the argument exist?
+  if(idx >= 0){
+    //find the before attribute
+    let attribute = strArr[idx];
+
+    //set the correct case of the first letter
+    if(/[A-Z]/.test(attribute[0])) {
+      after = after[0].toUpperCase() + after.substring(1);
+      console.log(after);
+    } else {
+      after = after[0].toLowerCase() + after.substring(1);
+    }
+    //replace the attribute 
+    strArr[idx] = after;   
+    //console.log(strArr);
+    }; 
+  let retStr = strArr.join(' ');
+  console.log(retStr);
+  return retStr;
+}
+
+myReplace("I think we should look up there", "up", "Down")
+myReplace("Let us go to the Store", "store", "mall");
+//myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped");

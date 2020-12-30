@@ -1,0 +1,29 @@
+function fearNotLetter(str) {
+  let alphabet = 'abcdefghijklmnopqrstuvwxyz';
+  let returnStr = '';
+  let b = alphabet.indexOf(str[0]);
+  console.log(b)
+  let e = alphabet.indexOf(str[str.length-1]);
+  console.log(e);
+
+  let refString = alphabet.substring(b, e+1);
+  console.log(refString);
+  const refArray = Array.from(refString);
+  const parmStr = Array.from(str);
+  console.log(refArray);
+  console.log(parmStr);
+  refArray.forEach(iterate);
+
+  function iterate(item, index, array) {
+    if(!parmStr.includes(item)){
+      returnStr = returnStr + item;
+    }
+  }
+  console.log(returnStr);
+  if (returnStr === ''){
+    returnStr = undefined
+  }
+  return returnStr;
+}
+
+fearNotLetter("abceg");

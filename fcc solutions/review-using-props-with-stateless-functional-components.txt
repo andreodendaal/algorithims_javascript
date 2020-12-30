@@ -1,0 +1,28 @@
+class CampSite extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <Camper/>
+      </div>
+    );
+  }
+};
+// change code below this line
+class Camper extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <p>{this.props.name}</p>
+    );
+  }
+};
+
+// include and assign default props
+Camper.defaultProps = {name: 'CamperBot' };
+// name prop required to be string
+Camper.propTypes = { name: PropTypes.string.isRequired};
